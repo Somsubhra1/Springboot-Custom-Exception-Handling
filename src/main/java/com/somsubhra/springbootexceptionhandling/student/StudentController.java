@@ -1,5 +1,6 @@
 package com.somsubhra.springbootexceptionhandling.student;
 
+import com.somsubhra.springbootexceptionhandling.exception.ApiRequestException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,8 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
-        throw new IllegalStateException("Cannot get all students");
+//        Calls exception class
+        throw new ApiRequestException("Can't get all students");
     }
 
 }
